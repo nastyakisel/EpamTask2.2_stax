@@ -31,7 +31,7 @@ public class StaXExecute {
 	private static final List<String> SNACK_NAMES = Arrays.asList(COLD_SNACK,
 			HOT_SNACK, BREAKFAST);
 
-	private Menu menu;
+	private Menu menu = new Menu();
 
 	private Snack currentSnack;
 	private Description currentDescription;
@@ -77,7 +77,6 @@ public class StaXExecute {
 					String id = reader.getAttributeValue(null, ATTRIBUTE_ID);
 					currentSnack.setId(id);
 				}
-				menu = new Menu();
 				switch (reader.getLocalName()) {
 				case COLD_SNACK:
 					menu.getColdSnacks().add(currentSnack);
